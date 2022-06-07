@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: democondraft
+  name: democondraft
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: democondraft
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: democondraft
+    spec:
+      containers:
+      - image: democondraft.azurecr.io/democondraft
+        name: democondraft
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
